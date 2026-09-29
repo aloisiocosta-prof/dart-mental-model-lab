@@ -1,0 +1,46 @@
+\documentclass[12pt,oneside,a4paper,brazil]{abntex2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage[alf]{abntex2cite}
+\titulo{Transformação de modelos mentais sobre a execução de Dart em ciclos construcionistas mediados por scaffolding: protocolo EEA v0.1}
+\autor{Aloisio Costa}
+\local{Brasil}
+\data{2026}
+\begin{document}
+\maketitle
+\begin{resumo}
+Este trabalho apresenta o protocolo piloto EEA para observar longitudinalmente como modelos mentais sobre a semântica e a execução da linguagem Dart se transformam durante ciclos de construção, previsão, experimentação, perturbação, autoexplicação e reflexão. A versão 0.1 possui caráter metodológico e observacional e não estabelece inferência causal.
+\textbf{Palavras-chave}: aprendizagem criativa; modelos mentais; educação em programação; Dart; scaffolding; autoexplicação.
+\end{resumo}
+\begin{abstract}
+This paper presents the EEA pilot protocol for longitudinally observing how mental models of Dart semantics and execution change through cycles of construction, prediction, experimentation, perturbation, self-explanation, and reflection. Version 0.1 is methodological and observational and makes no causal claim.
+\textbf{Keywords}: creative learning; mental models; programming education; Dart; scaffolding; self-explanation.
+\end{abstract}
+\section{Introdução}
+Abordagens construcionistas enfatizam construção de artefatos significativos, experimentação, projetos, colaboração e reflexão; projetos, paixão, pares e brincar/explorar constituem princípios associados à aprendizagem criativa \cite{resnick2017}. Dados de processo de programação podem registrar estados sucessivos do código e eventos; ProgSnap2 procura padronizar esse tipo de evidência em educação em computação \cite{price2020}.
+\section{Problema e questões de pesquisa}
+A questão principal é: \textit{Como ciclos construcionistas de criação, previsão, experimentação, perturbação, self-explanation e reflexão, mediados por scaffolding progressivamente removido, contribuem para a formação, revisão e transferência de modelos mentais sobre a semântica e execução de Dart?}
+\begin{enumerate}
+\item RQ1: Como previsões e explicações mudam após resultados contraditórios?
+\item RQ2: Quais tipos de scaffolding promovem revisão conceitual sem substituir a atividade cognitiva?
+\item RQ3: As representações permanecem corretas quando o scaffolding, inclusive IA, é reduzido ou removido?
+\end{enumerate}
+\section{Definição operacional}
+Adota-se provisoriamente aprendizagem profunda como capacidade crescente de construir, prever, explicar, modificar e transferir modelos sobre o comportamento da linguagem para situações ainda não observadas. Trata-se de decisão operacional, não de escala validada. Observam-se predição, explicação causal, transferência, diagnóstico e reconstrução explícita.
+\section{Protocolo EEA}
+A unidade de análise é o Episódio Experimental de Aprendizagem. Cada episódio contém elicitação, perturbação, reconstrução e generalização. Previsão e justificativa são registradas antes da execução. O ciclo é conceito $\rightarrow$ hipótese $\rightarrow$ experimento $\rightarrow$ previsão $\rightarrow$ execução $\rightarrow$ observação $\rightarrow$ explicação $\rightarrow$ modelo atual $\rightarrow$ modificação controlada $\rightarrow$ nova previsão $\rightarrow$ novo experimento $\rightarrow$ reflexão $\rightarrow$ modelo revisado.
+\section{Scaffolding e IA}
+A IA é mediador socrático e observador, não resolvedor padrão. A escala provisória varia de S0 a S6. Transferência começa em S0; retenção/autonomia poderá retirar completamente o suporte segundo procedimento previamente congelado.
+\section{Dados e rastreabilidade}
+Cada execução deverá registrar versão do Dart, plataforma, comando, hash do código, stdout, stderr, exit code, resultado do analisador, previsão associada e commit Git. O histórico Git complementa, mas não substitui registros estruturados \cite{price2020}.
+\section{Análise}
+A análise longitudinal representa mudanças como $M_t \rightarrow M_{t+1}$. O codebook v0.1 distingue MM0--MM5 e transições como refinamento, revisão, substituição, generalização, regressão e não resolução. Os códigos exigem piloto e futura avaliação independente.
+\section{Validade, ética e limitações}
+A v0.1 não permite inferência causal. Itens diagnósticos reais não são publicados previamente. Antes de pesquisa formal com participantes deverão ser definidos procedimentos éticos, consentimento, governança dos dados, critérios de inclusão, janelas de retenção e plano de análise.
+\section{Próximas etapas}
+Realizar dry-run com dados fictícios para testar completude, rastreabilidade e codificabilidade sem consumir itens diagnósticos.
+\bibliography{references}
+\end{document}
