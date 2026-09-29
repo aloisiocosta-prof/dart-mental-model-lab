@@ -1,0 +1,47 @@
+name: Scientific document CI-CD
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  build-article:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install TeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-lang-portuguese texlive-publishers texlive-bibtex-extra
+      - name: Validate research structure
+        run: |
+          set -euo pipefail
+          test -s protocol/EEA.md
+          test -s protocol/codebook.md
+          test -s protocol/scaffolding.md
+          test -s research/review-protocol.md
+          test -s research/evidence-matrix.md
+          test -s article/main.tex
+          test -s article/references.bib
+      - name: Build ABNT baseline PDF
+        run: make article
+      - name: Assert PDF
+        run: test -s build/article.pdf
+      - name: Upload scientific artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: article-pdf
+          path: build/article.pdf
+          if-no-files-found: error
+      - name: Publish tagged release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" build/article.pdf --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
