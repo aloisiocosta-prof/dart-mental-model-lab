@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this research protocol or software, please cite this repository and the corresponding paper when available."
+title: "Dart Mental Model Lab"
+type: software
+authors:
+  - family-names: "Costa"
+    given-names: "Aloisio"
+repository-code: "https://github.com/aloisiocosta-prof/dart-mental-model-lab"
+version: 0.1.0
+date-released: 2026-09-29
